@@ -2,9 +2,9 @@ import cv2
 import os
 import imutils
 
-NombreGesto = 'SacarLengua' #Aca se escribe el nombre del gesto a realizar
+NombreGesto = 'Enojado' #Aca se escribe el nombre del gesto a realizar
 
-dataPath = 'C:/Users/gabil/Desktop/PROYECTO VISION ARTIFICIAL/DATA'
+dataPath = 'C:/Users/gabil/Desktop/PROYECTO VISION ARTIFICIAL/Proyecto-Ingeneria-de-SW/DATA'
 CarpetaGesto = dataPath + '/' + NombreGesto
 
 if not os.path.exists(CarpetaGesto):
@@ -37,4 +37,4 @@ while True:
 		break
 
 cap.release()
-cv2.destroyAllWindows()
+cv2.destroyAllWindows()q
