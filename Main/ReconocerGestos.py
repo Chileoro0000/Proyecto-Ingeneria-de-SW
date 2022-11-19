@@ -7,12 +7,10 @@ import pyautogui
 
 def GestoReconocido(emotion):
 	#Gestones de gestos
-	if emotion == 'Beso': 
-		pyautogui.press('tab')
 	if emotion == 'InflarMejillas': 
 		pyautogui.press('down')
 	if emotion == 'SacarLengua':
-		pyautogui.press('enter') 
+		pyautogui.hotkey('alt','f4') 
 	if emotion == 'Sonrisa':
 		webbrowser.open("http://www.youtube.com", new=2, autoraise=True)
 		
@@ -22,11 +20,11 @@ if method == 'LBPH': emotion_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 emotion_recognizer.read('modelo'+method+'.xml')
 
-dataPath = 'C:/Users/gabil/Desktop/PROYECTO VISION ARTIFICIAL/Proyecto-Ingeneria-de-SW/DATA' #Cambia a la ruta donde hayas almacenado Data
+dataPath = 'D:/Uni_3er_2doSemestre/Ingenieria_software1/Prototipo/Proyecto-Ingeneria-de-SW/DATA' #Cambia a la ruta donde hayas almacenado Data
 GestoPaths = os.listdir(dataPath)
 print('GestoPaths=',GestoPaths)
 
-cap = cv2.VideoCapture(1,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 

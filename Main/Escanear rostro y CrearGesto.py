@@ -2,16 +2,16 @@ import cv2
 import os
 import imutils
 
-NombreGesto = 'Enojado' #Aca se escribe el nombre del gesto a realizar
+NombreGesto = 'SacarLengua' #Aca se escribe el nombre del gesto a realizar
 
-dataPath = 'C:/Users/gabil/Desktop/PROYECTO VISION ARTIFICIAL/Proyecto-Ingeneria-de-SW/DATA'
+dataPath = 'D:/Uni_3er_2doSemestre/Ingenieria_software1/Prototipo/Proyecto-Ingeneria-de-SW/DATA'
 CarpetaGesto = dataPath + '/' + NombreGesto
 
 if not os.path.exists(CarpetaGesto):
 	print('Carpeta creada: ',CarpetaGesto)
 	os.makedirs(CarpetaGesto)
 
-cap = cv2.VideoCapture(1,cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0,cv2.CAP_DSHOW) 
 
 faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 count = 0
@@ -33,8 +33,8 @@ while True:
 	cv2.imshow('frame',frame)
 
 	k =  cv2.waitKey(1)
-	if k == 27 or count >= 500:
+	if k == 27 or count >= 100:
 		break
 
 cap.release()
-cv2.destroyAllWindows()q
+cv2.destroyAllWindows()
